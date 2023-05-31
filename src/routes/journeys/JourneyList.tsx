@@ -8,9 +8,8 @@ export default function JourneyList() {
   return (
     <>
     {journeys.map(journey => (
-        <div key={journey.id} className="mb-4">
-            <p>Departure: {journey.departureStation.name}</p>
-            <p>Return: {journey.returnStation.name}</p>
+        <div key={journey.id} className="mb-4 p-2 bg-slate-200 rounded-lg">
+            <p className="font-bold">{journey.departureStation.name} - {journey.returnStation.name}</p>
             <p>Covered distance: {metersToKilometers(journey.coveredDistanceInMeters)} kilometers</p>
             <p>Duration: {secondsToMinutes(journey.durationInSeconds)} minutes</p>
         </div>

@@ -7,7 +7,7 @@ export default function StationList() {
   return (
     <>
     {stations.map(station => (
-        <Link key={station.id} to={`/station/${station.stationId}`} className="mb-4">
+        <Link key={station.id} to={`/station/${station.stationId}`} className="mb-4 flex font-bold">
             {station.name}
         </Link>
     ))}
