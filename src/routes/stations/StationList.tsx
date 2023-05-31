@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { Link, useLoaderData } from "react-router-dom"
 import { Station } from "../../types"
 
 
@@ -7,9 +7,9 @@ export default function StationList() {
   return (
     <>
     {stations.map(station => (
-        <div key={station.id} className="mb-4">
+        <Link key={station.id} to={`/station/${station.stationId}`} className="mb-4">
             {station.name}
-        </div>
+        </Link>
     ))}
     </>
   )
