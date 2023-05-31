@@ -1,20 +1,11 @@
-import { Outlet, useLoaderData } from "react-router-dom"
-import { Journey } from "../types"
-import { metersToKilometers, secondsToMinutes } from "../utils"
+import { Link, Outlet } from "react-router-dom"
 
 export default function Root() {
-    const journeys = useLoaderData() as Journey[]
-    
   return (
     <>
-    {journeys.map(journey => (
-        <div key={journey.id} className="mb-4">
-            <p>Departure: {journey.departureStation.name}</p>
-            <p>Return: {journey.returnStation.name}</p>
-            <p>Covered distance: {metersToKilometers(journey.coveredDistanceInMeters)} kilometers</p>
-            <p>Duration: {secondsToMinutes(journey.durationInSeconds)} minutes</p>
-        </div>
-    ))}
+    <h1 className="text-4xl">Citybikes app</h1>
+    <Link to={"/journeys"}>Journeys</Link>
+    <Link to={"/stations"}>Stations</Link>
     <Outlet />
     </>
   )

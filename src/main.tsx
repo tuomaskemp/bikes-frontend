@@ -6,16 +6,16 @@ import {
 } from "react-router-dom";
 import './index.css'
 import { journeyLoader } from './routes/loaders/journeys';
-import Root from './routes/root';
 import { stationsLoader } from './routes/loaders/stations';
 import StationList from './routes/stations/StationList';
+import Root from './routes/Root';
+import JourneyList from './routes/journeys/JourneyList';
 
 const error = <p>Cannot load data.</p>;
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
-    loader: journeyLoader,
     errorElement: error,
      children: [
         {
@@ -23,7 +23,13 @@ const router = createBrowserRouter([
           loader: stationsLoader,
           element:<StationList />,
           errorElement: error,
-        }
+        },
+        {
+          path: "/journeys",
+          loader: journeyLoader,
+          element:<JourneyList />,
+          errorElement: error,
+        },
      ]
   },
 ]);
