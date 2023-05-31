@@ -7,13 +7,24 @@ import {
 import './index.css'
 import { journeyLoader } from './routes/loaders/journeys';
 import Root from './routes/root';
+import { stationsLoader } from './routes/loaders/stations';
+import StationList from './routes/stations/StationList';
 
+const error = <p>Cannot load data.</p>;
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
     loader: journeyLoader,
-    errorElement: <p>Cannot load data.</p>
+    errorElement: error,
+     children: [
+        {
+          path: "/stations",
+          loader: stationsLoader,
+          element:<StationList />,
+          errorElement: error,
+        }
+     ]
   },
 ]);
 

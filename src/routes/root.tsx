@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom"
+import { Outlet, useLoaderData } from "react-router-dom"
 import { Journey } from "../types"
 import { metersToKilometers, secondsToMinutes } from "../utils"
 
@@ -15,6 +15,7 @@ export default function Root() {
             <p>Duration: {secondsToMinutes(journey.durationInSeconds)} minutes</p>
         </div>
     ))}
+    <Outlet />
     </>
   )
 }
