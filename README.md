@@ -1,6 +1,6 @@
 # City Bike Frontend App
 
-The City Bike Frontend App is a web application built to provide a user interface for a city bike rental service. It allows users to view bike stations and journeys.
+The City Bike Frontend App is a web application built to provide a user interface for a city bike rental service. It allows users to view bike stations and journeys. Backend repository: https://github.com/tuomaskemp/bikes-backend
 
 ## Technologies
 
