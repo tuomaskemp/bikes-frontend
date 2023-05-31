@@ -4,7 +4,6 @@ import { Station } from "../../types"
 
 export default function StationList() {
     const stations = useLoaderData() as Station[]
-    
   return (
     <>
     {stations.map(station => (

@@ -23,4 +23,6 @@ export type Station = {
   capacity: number;
   latitude: number;
   longitude: number;
+  totalJourneysDeparting: number;
+  totalJourneysReturning: number;
 };
